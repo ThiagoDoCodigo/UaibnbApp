@@ -89,8 +89,10 @@ function CadastrarLocacao({ setListaLocacoes }) {
   return (
     <PageTransition>
       <div
-        className={`flex flex-wrap items-center gap-4 justify-around py-7 px-4 absolute left-0 w-full h-[calc(100vh-70px)] overflow-y-auto ${
-          isMobile ? "top-[100px]" : "top-[70px]"
+        className={`flex flex-wrap items-center gap-4 justify-around py-7 px-4 absolute left-0 w-full  overflow-y-auto ${
+          isMobile
+            ? "top-[100px] h-[calc(85vh-70px)]"
+            : "top-[70px] h-[calc(100vh-70px)]"
         }`}
       >
         <div className="bg-white rounded-lg w-[450px] flex flex-col items-center shadow-md p-8 hover:shadow-lg">

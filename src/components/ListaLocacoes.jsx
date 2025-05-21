@@ -67,12 +67,17 @@ function ListaLocacoes({ listaLocacoes }) {
             <Search color="#506249" />
           </div>
         </div>
-        <div className="flex flex-wrap gap-4 justify-around overflow-y-auto py-3 px-4 mb-8">
+        <div
+          className={`flex flex-wrap gap-4 justify-around overflow-y-auto py-3 px-4  ${
+            isMobile ? "mb-8 h-[70vh]" : "mb-8"
+          }`}
+        >
           {listaFiltrada.map((locacao) => {
             return (
               <div
                 key={locacao.id}
-                className="bg-white rounded-lg w-[340px] h-[420px] flex flex-col justify-between shadow-md p-4 hover:shadow-lg"
+                style={isMobile ? { width: "100%" } : { width: "340px" }}
+                className="bg-white rounded-lg  h-[420px] flex flex-col justify-between shadow-md p-4 hover:shadow-lg"
               >
                 <div className="flex flex-col w-full">
                   <img
@@ -108,7 +113,7 @@ function ListaLocacoes({ listaLocacoes }) {
                   </div>
                 </div>
                 <button
-                  onClick={() => navigate(`/locacao/${locacao.id}`)}
+                  onClick={() => navigate(`/UaibnbApp/locacao/${locacao.id}`)}
                   className="bg-[#44523A] text-white font-semibold py-2 rounded-md hover:bg-[#506249] active:bg-[#44523A]"
                 >
                   Acessar detalhes

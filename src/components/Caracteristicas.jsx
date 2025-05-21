@@ -103,11 +103,17 @@ function Caracteristicas({ listaCaracteristicas, setListaCaracteristicas }) {
   return (
     <PageTransition>
       <div
-        className={` flex-wrap flex items-center gap-4 justify-around py-7 px-4 absolute left-0 w-full h-[calc(100vh-70px)] overflow-y-auto ${
-          isMobile ? "top-[100px] " : "top-[70px] "
+        className={` flex-wrap flex  gap-4 justify-around  py-7 px-4 absolute left-0 w-full ${
+          isMobile
+            ? "top-[100px] h-[calc(100vh-100px)] items-center"
+            : "top-[70px] h-[calc(100vh-70px)] items-center"
         }`}
       >
-        <div className="bg-white rounded-lg w-[700px]  flex flex-col items-center shadow-md p-8 hover:shadow-lg">
+        <div
+          className={`bg-white rounded-lg w-[700px]  flex flex-col align-center justify-start shadow-md p-8 hover:shadow-lg ${
+            isMobile ? "h-[72vh]" : "h-[80vh]"
+          }`}
+        >
           <div className="w-full flex items-center justify-around">
             <p
               className="text-1xl font-semibold text-[#505050] underline-offset-2 cursor-pointer"
@@ -131,7 +137,7 @@ function Caracteristicas({ listaCaracteristicas, setListaCaracteristicas }) {
             <div className="flex items-center gap-2">
               <ListPlus size={30} color="#505050" />
               <p className="text-[20px] font-semibold text-[#505050]">
-                Cadastrar nova característica
+                Nova característica
               </p>
             </div>
             <div className="flex flex-col items-start gap-2 w-full mt-3">
@@ -173,7 +179,7 @@ function Caracteristicas({ listaCaracteristicas, setListaCaracteristicas }) {
             </button>
           </div>
           <div
-            className="h-full flex-col items-center justify-center w-full mt-12"
+            className="h-full flex-col items-center justify-center w-full mt-0"
             style={{ display: opotion === 2 ? "flex" : "none" }}
           >
             <div className="flex items-center gap-2">
@@ -182,13 +188,12 @@ function Caracteristicas({ listaCaracteristicas, setListaCaracteristicas }) {
                 Lista de características
               </p>
             </div>
-            <div className="flex-col flex mt-3 gap-2 w-full overflow-y-auto h-[68vh]">
+            <div className="flex-col flex mt-3 gap-2 w-full overflow-y-scroll h-[80%]">
               {lista.map((caracteristica) => {
                 return (
                   <div
                     key={caracteristica.id}
-                    style={{ padding: "8px 40px 8px 12px" }}
-                    className="relative w-full bg-[#efefef] rounded-sm border border-[#9f9f9f] flex flex-col gap-2"
+                    className="relative w-full bg-[#efefef] py-2 px-4  rounded-sm border border-[#9f9f9f] flex flex-col gap-2"
                   >
                     <div className="flex items-center gap-2">
                       <PencilLine size={20} color="#505050" />

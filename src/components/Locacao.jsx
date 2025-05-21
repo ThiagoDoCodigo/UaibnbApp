@@ -180,33 +180,26 @@ function Locacao({ listaCaracteristicas, setListaLocacoes }) {
 
   return (
     <PageTransitionAdd>
-      <div className="w-full top-0 left-0 bg-[#e7e7e7] z-10 h-[100vh] p-4 relative">
-        <div
-          onClick={() => navigate("/")}
-          className="absolute top-1 left-1 flex items-center gap-2 cursor-pointer p-2 hover:bg-[#fff] rounded active:bg-[#f2f2f2]"
-        >
-          <ArrowLeft size={22} color="#505050" />
-          <p className="text-[14px] text-[#505050]">Voltar</p>
-        </div>
-        <div
-          className="w-full flex items-center justify-center gap-3"
-          style={isMobile ? { marginTop: "30px" } : {}}
-        >
-          <List size={40} color="#505050" />
-          <p className="text-2xl font-bold text-[#505050]">
-            Detalhes da locação
-          </p>
-        </div>
+      <div className="w-full top-0 left-0 bg-[#e7e7e7] z-10 h-screen p-4 absolute">
         <div className="flex w-full h-full align-center justify-center">
           <div
-            className="bg-white rounded-lg w-[1000px]  flex flex-col shadow-md p-7 hover:shadow-lg mt-7 mb-7"
+            className="bg-white rounded-lg w-[1000px]  flex flex-col relative shadow-md p-7 hover:shadow-lg"
             style={
               isMobile
-                ? { overflowY: "scroll", height: "86vh" }
-                : { overflowY: "hidden", height: "90vh" }
+                ? { overflowY: "scroll", height: "90%" }
+                : { overflowY: "hidden", height: "100%" }
             }
           >
-            <div className={`w-full flex gap-4 ${isMobile ? "flex-col" : ""}`}>
+            <div
+              onClick={() => navigate("/UaibnbApp/")}
+              className="absolute top-1 left-1 flex items-center gap-2 cursor-pointer p-2 hover:bg-[#fff] rounded active:bg-[#f2f2f2]"
+            >
+              <ArrowLeft size={22} color="#505050" />
+              <p className="text-[14px] text-[#505050]">Voltar</p>
+            </div>
+            <div
+              className={`w-full flex mt-4 gap-4 ${isMobile ? "flex-col" : ""}`}
+            >
               <img
                 src={locacao.fields.imagem}
                 alt={locacao.fields.titulo}
@@ -309,7 +302,7 @@ function Locacao({ listaCaracteristicas, setListaLocacoes }) {
                 </button>
               </div>
               <div
-                className="flex-col gap-2 w-full overflow-y-auto h-[380px]"
+                className="flex-col gap-2 w-full overflow-y-auto h-[420px]"
                 style={add ? { display: "none" } : { display: "flex" }}
               >
                 {caracteristicasFiltradas.map((caracteristica) => {
@@ -342,7 +335,7 @@ function Locacao({ listaCaracteristicas, setListaLocacoes }) {
                 })}
               </div>
               <div
-                className="flex-col gap-2 w-full overflow-y-auto h-[380px]"
+                className="flex-col gap-2 w-full overflow-y-auto h-[420px]"
                 style={add ? { display: "flex" } : { display: "none" }}
               >
                 {caracteristicasDiferentes

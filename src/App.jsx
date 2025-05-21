@@ -102,15 +102,15 @@ function Sections() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route
-            path="/"
+            path="/UaibnbApp/"
             element={<ListaLocacoes listaLocacoes={listaLocacoes} />}
           />
           <Route
-            path="/cadastrar"
+            path="/UaibnbApp/cadastrar"
             element={<CadastrarLocacao setListaLocacoes={setarLocacoes} />}
           />
           <Route
-            path={`/locacao/:id`}
+            path={`/UaibnbApp/locacao/:id`}
             element={
               <Locacao
                 listaCaracteristicas={listaCaracteristicas}
@@ -119,7 +119,7 @@ function Sections() {
             }
           />
           <Route
-            path="/caracteristicas"
+            path="/UaibnbApp/caracteristicas"
             element={
               <Caracteristicas
                 listaCaracteristicas={listaCaracteristicas}

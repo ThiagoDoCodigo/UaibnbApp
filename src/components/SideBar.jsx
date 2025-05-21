@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { Search } from "lucide-react";
 import { useState, useEffect } from "react";
+import logo from "../assets/logo.png";
 
 function SideBar() {
   const location = useLocation();
@@ -30,47 +31,43 @@ function SideBar() {
     >
       <div className="flex items-center gap-10">
         <div className="flex items-center gap-2">
-          <img
-            src="./src/assets/logo.png"
-            className="w-16 h-16"
-            alt="logo uaibnb"
-          />
+          <img src={logo} className="w-16 h-16" alt="logo uaibnb" />
           <p className="text-2xl font-bold text-[#505050]">
             Setor de administração
           </p>
         </div>
       </div>
       <div className="flex items-center gap-7">
-        <p
+        <button
           className={`text-[16px] text-[#505050] cursor-pointer ${
-            location.pathname === "/"
+            location.pathname === "/UaibnbApp/"
               ? "font-bold underline decoration-[#505050] underline-offset-2"
               : ""
           }`}
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/UaibnbApp/")}
         >
           Acomodações
-        </p>
-        <p
+        </button>
+        <button
           className={`text-[16px] text-[#505050] cursor-pointer ${
-            location.pathname === "/cadastrar"
+            location.pathname === "/UaibnbApp/cadastrar"
               ? "font-bold underline decoration-[#505050] underline-offset-2"
               : ""
           }`}
-          onClick={() => navigate("/cadastrar")}
+          onClick={() => navigate("/UaibnbApp/cadastrar")}
         >
           Cadastro
-        </p>
-        <p
+        </button>
+        <button
           className={`text-[16px] text-[#505050] cursor-pointer ${
-            location.pathname === "/caracteristicas"
+            location.pathname === "/UaibnbApp/caracteristicas"
               ? "font-bold underline decoration-[#505050] underline-offset-2"
               : ""
           }`}
-          onClick={() => navigate("/caracteristicas")}
+          onClick={() => navigate("/UaibnbApp/caracteristicas")}
         >
           Características
-        </p>
+        </button>
       </div>
     </div>
   );
